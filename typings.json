@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "debug": "github:typed-typings/npm-debug#0e398cb21de268744dd048a11461be5c13230bad"
+  }
+}

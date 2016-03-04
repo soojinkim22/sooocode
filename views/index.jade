@@ -1,0 +1,193 @@
+extends layout
+
+block content
+    //h1= title
+    //p Welcome to #{title}
+
+    section(id="header")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-6")
+                    div(class="block-left")
+                        nav(class="navbar navbar-default" role="navigation")
+                            div(class="container-fluid")
+                                div(class="navbar-header")
+                                    button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+                                        span(class="sr-only") Toggle navigation
+                                        span(class="icon-bar")
+                                        span(class="icon-bar")
+                                        span(class="icon-bar")
+
+                                    div(class="nav-logo")
+                                        a(href="#")
+                                            img(src="/images/text.png" alt="logo")
+
+
+                                div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+                                    ul(class="nav navbar-nav")
+                                        li(class="active")
+                                            a(href="#") Home
+                                                span(class="sr-only") (current)
+                                        li
+                                            a(href="#") About me
+                                        li
+                                            a(href="#") Portfolio
+                                        li
+                                            a(href="#") Gallery
+
+                div(class="col-md-6")
+                    div(class="block-right")
+                        div(class="contact-area")
+                            ul
+                                //li
+                                    i(class="fa fa-phone-square") 080-1234-5678
+                                li
+                                    i(class="fa fa-envelope-o") soojinkim22@gmail.com
+
+    section(id="slider")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-12")
+                    div(class="block")
+                        div(class="slider-text-area")
+                            div(class="slider-text")
+                                h2 Welcome
+                                br
+                                p(class="sub-slider-text") sooocode.me
+                                p(class="slider-p") Since 2016.2.20
+                                br
+                                p Make a website and Do an experiment some api.
+                                br
+                                button(type="button" class="btn btn-default edit-button-1") DOWNLOAD
+
+    section(id="service")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-12")
+                    div(class="block-top")
+                        div(class="service-header")
+                            h1 Hello World!! About me
+                            p This site is sooocode.me.
+
+            div(class="row")
+                div(class="col-md-12")
+                    div(class="block-bottom")
+                        div(class="service-tab")
+                            ul(class="badhon-tab" role="tablist")
+                                li(class="active")
+                                    a(href="#home" aria-controls="home" role="tab" data-toggle="tab")
+                                        i(class="fa fa-user") Name is
+
+                                li
+                                    a(href="#profile" aria-controls="profile" role="tab" data-toggle="tab")
+                                       i(class="fa fa-globe") From..
+
+                                li
+                                    a(href="#messages" aria-controls="messages" role="tab" data-toggle="tab")
+                                       i(class="fa fa-leaf") Hobby is
+
+                                li
+                                    a(href="#settings" aria-controls="settings" role="tab" data-toggle="tab")
+                                       i(class="fa fa-eyedropper") Blood Type is
+
+                                li
+                                    a(href="#umbrella" aria-controls="settings" role="tab" data-toggle="tab")
+                                       i(class="fa fa-briefcase") Job is
+
+                            div(class="tab-content edit-tab-content")
+                                div(class="tab-pane active edit-tab" id="home")
+                                    div(class="teb-icon-edit")
+                                        i(class="fa fa-user")
+                                    h1 My name is Soojin Kim
+                                    p Korean orthography is 김 수진, Japanese orthography is キム・スジン.
+                                    p #{age} years old.
+
+                                div(class="tab-pane edit-tab" id="profile")
+                                    div(class="teb-icon-edit")
+                                        i(class="fa fa-globe")
+                                    h1 From Korea
+                                    p Korea is ...
+
+                                div(class="tab-pane edit-tab" id="messages")
+                                    div(class="teb-icon-edit")
+                                        i(class="fa fa-leaf")
+                                    h1 Hobby is
+                                    p Bouldering, Camera, Cycling, Watching the movies etc...
+
+                                div(class="tab-pane edit-tab" id="settings")
+                                    div(class="teb-icon-edit")
+                                        i(class="fa fa-eyedropper")
+                                    h1 Blood Type is
+                                    p 'O' type.
+
+                                div(class="tab-pane edit-tab" id="umbrella")
+                                    div(class="teb-icon-edit")
+                                        i(class="fa fa-briefcase")
+                                    h1 Job is
+                                    p Engineer.
+                                    p now i'm doing #{asmtest} asm.js test
+
+    section(id="footer")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-12")
+                    div(class="block")
+                        div(class="footer-contant")
+                            h3 Get In Touch
+                            div(class="social-icon")
+                                a(href="https://facebook.com/emily.kim.927" target='_blank')
+                                    i(class="fa fa-facebook icon")
+                                a(href="https://www.tumblr.com/dashboard" target='_blank')
+                                    i(class="fa fa-tumblr icon")
+                                a(href="https://plus.google.com/u/0/105705172989149392389" target='_blank')
+                                    i(class="fa fa-google icon")
+                                a(href="https://twitter.com/soojinkim23" target='_blank')
+                                    i(class="fa fa-twitter icon")
+                            div(class="rights")
+                                h6 All rights reserved.
+
+                        div.row
+                            div.col-sm-10.col-sm-offset-1(style="padding:0;")
+                                div.social-area-syncer
+                                    div.row.social-button-syncer
+                                        col-sm-4.sc-tw(style="margin:10px;")
+                                            a.twitter-share-button(data-url='sooocode.me', href='https://twitter.com/share', data-lang='ja', data-count='vertical', data-dnt='true') ツイート
+                                        col-sm-4.sc-fb(style="margin:10px;")
+                                            a.fb-like(data-href='sooocode.me', data-layout='box_count', data-action='like', data-show-faces='true', data-share='false')
+                                        col-sm-4(style="margin:10px;")
+                                            div(data-href="sooocode.me", class="g-plusone", data-size="tall")
+
+    //header(class="primary-header")
+        div(class="container")
+            h1(class="primary-header__title") My Tasks App
+            small using custom context menus
+
+    //main(class="content")
+        div(class="container")
+            ul(class="tasks")
+                li(class="task" data-id="3")
+                    div(class="task__content") Go To Grocery
+
+                li(class="task" data-id="2")
+                    div(class="task__content") Type Some Code
+
+                li(class="task" data-id="1")
+                    div(class="task__content") Build An App
+
+    //footer(class="primary-footer")
+        div(class="container")
+            small &copy; 2016 02 Context Menu! Demo by Sooo!
+
+    //nav(id="context-menu" class="context-menu")
+        ul(class="context-menu__items")
+            li(class="context-menu__item")
+                a(href="#" class="context-menu__link" data-action="View" itemscope itemtype="http://schema.org/Review")
+                    i(class="fa fa-eye") View Task
+
+            li(class="context-menu__item")
+                a(href="#" class="context-menu__link" data-action="Edit")
+                    i(class="fa fa-edit") Edit Task
+
+            li(class="context-menu__item")
+                a(href="#" class="context-menu__link" data-action="Delete")
+                    i(class="fa fa-times") Delete Task

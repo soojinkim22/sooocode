@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -52,7 +52,7 @@ function getPosition(e:any) {
         position_y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
     }
 
-    return { x: position_x, y: position_y }
+    return { x: position_x, y: position_y };
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -137,7 +137,7 @@ function keyupListener() {
         if ( e.keyCode === 27 ) {
             toggleMenuOff();
         }
-    }
+    };
 }
 
 /**

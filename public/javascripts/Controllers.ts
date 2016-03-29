@@ -16,14 +16,14 @@
  * @param {String} className The class name to check against
  * @return {Boolean}
  */
-function clickInsideElement( e:any, className:any ) {
+function clickInsideElement(e:any, className:any) {
     var element:any = e.srcElement || e.target;
 
-    if ( element.classList.contains(className) ) {
+    if (element.classList.contains(className)) {
         return element;
     } else {
-        while ( element = element.parentNode ) {
-            if ( element.classList && element.classList.contains(className) ) {
+        while (element = element.parentNode) {
+            if (element.classList && element.classList.contains(className)) {
                 return element;
             }
         }
@@ -52,7 +52,7 @@ function getPosition(e:any) {
         position_y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
     }
 
-    return { x: position_x, y: position_y };
+    return {x: position_x, y: position_y};
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -67,15 +67,15 @@ function getPosition(e:any) {
  * Variables.
  */
 var contextMenuLinkClassName:string = "context-menu__link";
-var contextMenuActive:string        = "context-menu--active";
-var taskItemClassName:string        = "task";
+var contextMenuActive:string = "context-menu--active";
+var taskItemClassName:string = "task";
 var taskItemInContext:any;
 var clickCoords:any;
 var clickCoordsX:number;
 var clickCoordsY:any;
 
-var menu:any                        = document.querySelector("#context-menu");
-var menuState:number                = 0;
+var menu:any = document.querySelector("#context-menu");
+var menuState:number = 0;
 var menuWidth:number;
 var menuHeight:number;
 
@@ -91,15 +91,15 @@ function init() {
     keyupListener();
     resizeListener();
 }
-
+ 
 /**
  * Listens for contextmenu events.
  */
 function contextListener() {
-    document.addEventListener( "contextmenu", (e:any) => {
-        taskItemInContext = clickInsideElement( e, taskItemClassName );
+    document.addEventListener("contextmenu", (e:any) => {
+        taskItemInContext = clickInsideElement(e, taskItemClassName);
 
-        if ( taskItemInContext ) {
+        if (taskItemInContext) {
             e.preventDefault();
             toggleMenuOn();
             positionMenu(e);
@@ -114,19 +114,19 @@ function contextListener() {
  * Listens for click events.
  */
 function clickListener() {
-   document.addEventListener( "click", (e:any) => {
-       var clickeElIsLink:any = clickInsideElement( e, contextMenuLinkClassName );
+    document.addEventListener("click", (e:any) => {
+        var clickeElIsLink:any = clickInsideElement(e, contextMenuLinkClassName);
 
-       if ( clickeElIsLink ) {
-           e.preventDefault();
-           menuItemListener( clickeElIsLink );
-       } else {
-           var button:any = e.which || e.button;
-           if ( button === 1 ) {
-               toggleMenuOff();
-           }
-       }
-   });
+        if (clickeElIsLink) {
+            e.preventDefault();
+            menuItemListener(clickeElIsLink);
+        } else {
+            var button:any = e.which || e.button;
+            if (button === 1) {
+                toggleMenuOff();
+            }
+        }
+    });
 }
 
 /**
@@ -134,7 +134,7 @@ function clickListener() {
  */
 function keyupListener() {
     window.onkeyup = (e:any) => {
-        if ( e.keyCode === 27 ) {
+        if (e.keyCode === 27) {
             toggleMenuOff();
         }
     };
@@ -153,9 +153,9 @@ function resizeListener() {
  * Turns the custom context menu on.
  */
 function toggleMenuOn() {
-    if ( menuState !== 1 ) {
+    if (menuState !== 1) {
         menuState = 1;
-        menu.classList.add( contextMenuActive );
+        menu.classList.add(contextMenuActive);
     }
 }
 
@@ -163,9 +163,9 @@ function toggleMenuOn() {
  * Turns the custom context menu off.
  */
 function toggleMenuOff() {
-    if ( menuState !== 0 ) {
+    if (menuState !== 0) {
         menuState = 0;
-        menu.classList.remove( contextMenuActive );
+        menu.classList.remove(contextMenuActive);
     }
 }
 
@@ -174,24 +174,24 @@ function toggleMenuOff() {
  *
  * @param {Object} e The event
  */
-function positionMenu (e:any) {
-    clickCoords  = getPosition(e);
+function positionMenu(e:any) {
+    clickCoords = getPosition(e);
     clickCoordsX = clickCoords.x;
     clickCoordsY = clickCoords.y;
 
-    menuWidth    = menu.offsetWidth + 4;
-    menuHeight   = menu.offsetHeight + 4;
+    menuWidth = menu.offsetWidth + 4;
+    menuHeight = menu.offsetHeight + 4;
 
-    windowWidth  = window.innerWidth;
+    windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
 
-    if ( (windowWidth - clickCoordsX) < menuWidth ) {
+    if ((windowWidth - clickCoordsX) < menuWidth) {
         menu.style.left = windowWidth - menuWidth + "px";
     } else {
         menu.style.left = clickCoordsX + "px";
     }
 
-    if ( (windowHeight - clickCoordsY) < menuHeight ) {
+    if ((windowHeight - clickCoordsY) < menuHeight) {
         menu.style.top = windowHeight - menuHeight + "px";
     } else {
         menu.style.top = clickCoordsY + "px";
@@ -203,8 +203,8 @@ function positionMenu (e:any) {
  *
  * @param {HTMLElement} link The link that was clicked
  */
-function menuItemListener( link ) {
-    console.log( "Task ID - " + taskItemInContext.getAttribute("data-id") + ", Task action - " + link.getAttribute("data-action"));
+function menuItemListener(link) {
+    console.log("Task ID - " + taskItemInContext.getAttribute("data-id") + ", Task action - " + link.getAttribute("data-action"));
     toggleMenuOff();
 }
 

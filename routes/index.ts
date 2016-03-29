@@ -9,13 +9,13 @@
         // 4)return句
     }
 */
-'use strict';
+"use strict";
 
 declare function require(x:string):any;
 
-var express:any     = require('express');
-var cryptico:any    = require('cryptico');
-var _:any           = require('lodash');
+var express:any     = require("express");
+var cryptico:any    = require("cryptico");
+var _:any           = require("lodash");
 var router:any      = express.Router();
 
 var PassPhrase:string           = "The Moon is a Harsh Mistress.";              // The passphrase used to repeatably generate this RSA key.
@@ -32,8 +32,8 @@ var Crypted:string          = EncryptionResult.cipher;
 var DecryptionResult:any    = cryptico.decrypt(Crypted, MattsRSAkey);
 var Decryption:string       = DecryptionResult.plaintext;
 
-router.get('/', (request:any, response:any, next:any) => {
-    response.render('index', { title: Decryption, age: add1(22), asmtest: calc_tax_included_price(100, 1.08)});
+router.get("/", (request:any, response:any, next:any) => {
+    response.render("index", { title: Decryption, age: add1(22), asmtest: calc_tax_included_price(100, 1.08)});
 });
 
 
@@ -46,16 +46,16 @@ module.exports = router;
 
 
 function add1(x) {
-    'use asm';
-    x = x|0; // x : int
-    return (x+1)|0;
+    "use asm";
+    x = x | 0; // x : int
+    return (x + 1) | 0;
 }
 console.log(add1(22));
 
 function add2(x:Uint8Array) {
-    'use asm';
-    x[0] = x[0]|0; // x : int
-    return (x[0]+1)|0;
+    "use asm";
+    x[0] = x[0] | 0; // x : int
+    return (x[0] + 1) | 0;
 }
 
 var buffer = new ArrayBuffer(1024 * 8);
@@ -64,11 +64,11 @@ arrays[0] = 10;
 console.log(add2(arrays));
 
 function calc_tax_included_price(price, tax_rate) {
-    'use asm';
-    price = price|0;      // priceはint
+    "use asm";
+    price = price | 0;      // priceはint
     tax_rate = +tax_rate; // tax_rateはdouble
 
-    return +(price * tax_rate); //略
+    return +(price * tax_rate); // 略
 }
 
 console.log(calc_tax_included_price(100, 1.08));

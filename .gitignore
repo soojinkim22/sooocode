@@ -30,3 +30,7 @@ typings/browser/definitions/debug/debug.d.ts
 typings/main.d.ts
 
 typings/main/definitions/debug/debug.d.ts
+
+.idea/encodings.xml
+
+.idea/sooo.iml

@@ -174,7 +174,7 @@ function toggleMenuOff() {
  *
  * @param {Object} e The event
  */
-function positionMenu(e:any) {
+function positionMenu (e:any) {
     clickCoords  = getPosition(e);
     clickCoordsX = clickCoords.x;
     clickCoordsY = clickCoords.y;

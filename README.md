@@ -10,5 +10,9 @@ basic requirements
 	
 	ex) typings install node --save --ambient
 
-	$bower install
-	
+	$bower instal
+
+
+
+# bramp!bramp!bramp!bramp!bramp!bramp!bramp!bramp!
+
